@@ -16,19 +16,45 @@
   margin-bottom: 20px;
   height: 100%;
   width: 80%;
+  max-width: 1400px;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
 }
 
 .settings {
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-bottom: 20px;
 }
 
+.settings-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding: 2rem;
+  justify-content: center;
+  justify-items: center;
+}
+
 .targetStringContainer,
-.populationSizeContainer {
+.populationSizeContainer,
+.mutationRateContainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin: 0 10px;
+  width: 90%;
+  align-items: baseline;
+  font-size: clamp(1rem, 2vw, 2rem);
+}
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  font-size: clamp(1rem, 2vw, 2rem);
 }
 
 .label {
@@ -43,8 +69,10 @@
   border-radius: 4px;
 }
 
-.generation, .target, .best {
+.generation, .target, .best-individuo {
   margin: 10px;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .population {
@@ -52,7 +80,14 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 20px;
+}
 
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .individual {
@@ -61,6 +96,7 @@
   padding: 5px 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 2rem;
   transition: background-color 0.3s;
 }
 
@@ -68,19 +104,12 @@
   border: 1px solid #e0ffee; /* Cor de destaque para mudanças */
 }
 
-.simulation-button {
+.startSimulationButton {
   margin-top: 20px;
   padding: 10px 20px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
+  font-size: 2rem;
+  border: 1px solid #ccc;
   cursor: pointer;
-}
-
-.simulation-button:hover {
-  background-color: #0056b3;
 }
 
 input.invalid {
